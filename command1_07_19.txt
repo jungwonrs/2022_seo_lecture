@@ -1,0 +1,23 @@
+romance below chair viable grape used simple gasp social spawn fan negative
+
+geth --datadir ./datadir /account new
+
+==============================
+
+0x10C15aEd8d5AF4770536D5D7f3FE254bB3fc5234
+
+09ab38624dc65c11842ca93b1dd7520ac32d7f246aa9b34f43a5cd5d1e86a485
+
+============================================
+
+geth ==> mainnet 실제로 사용되는 ethereum network
+
+
+geth 
+--ropsten 
+--datadir C:\Users\jungw\OneDrive\Desktop\eth_testnet\datadir\ 
+--http
+--http.addr 0.0.0.0 
+--http.corsdomain * 
+--allow-insecure-unlock 
+--http.api eth,net,web3,personal

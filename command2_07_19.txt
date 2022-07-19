@@ -1,0 +1,75 @@
+C:\Users\jungw\OneDrive\Desktop\eth_private\keystore
+
+get --datadir C:\Users\jungw\OneDrive\Desktop\eth_private\keystore account new
+
+=============================================
+[node1]
+address: 57b16fce139583880bf6355c8cab1005e77432dc
+private key: c364e2a023f2a711c963165b6e52991339facdde25cd895d875af3acdc5e2594
+
+[node2]
+address: 1cbaa2ba9f65b9e81217935034239a66b3995292
+private key: 703e07cbccd71b4534532d5b20382559a3bb388451880d46baea23bae4b24987
+
+[node3]
+address: ee5dad2f21764cc87291893f309f5b34eb123fe1
+private key: bea09f076456560d03db3a0b9e0914742f84925b8f4894102a9fd5c3a912a7b2
+
+[node4]
+address: d771213c4b7683b1f745e295ff0efe74cab80ccb
+private key: 4d6fe10d43bae32aa4a0c4f90b35de5946258d7d5dd4dcfe858162b6e5c975a5
+
+
+=========================================================
+node1 
+geth --datadir C:\Users\jungw\OneDrive\Desktop\eth_private\node1 init genesis.json
+
+node2
+geth --datadir C:\Users\jungw\OneDrive\Desktop\eth_private\node2 init genesis.json
+
+node3
+geth --datadir C:\Users\jungw\OneDrive\Desktop\eth_private\node3 init genesis.json
+
+node4
+geth --datadir C:\Users\jungw\OneDrive\Desktop\eth_private\node4 init genesis.json
+
+==========================================================
+node1
+geth --networkid 719 --datadir C:\Users\jungw\OneDrive\Desktop\eth_private\node1\ --ipcdisable --http.addr "*" --http.port 8545 --ws.port 8546 --http.api admin,db,eth,debug,miner,net,shh,txpool,personal,web3 --ws.api admin,db,eth,debug,miner,net,shh,txpool,personal,web3 --mine --port 30304 --allow-insecure-unlock --nat=extip:127.0.0.1 console 
+
+node2
+geth --networkid 719 --datadir C:\Users\jungw\OneDrive\Desktop\eth_private\node2\ --ipcdisable --http.port 8555 --ws.port 8556 --http.api admin,db,eth,debug,miner,net,shh,txpool,personal,web3 --ws.api admin,db,eth,debug,miner,net,shh,txpool,personal,web3 --mine --port 30314 --allow-insecure-unlock  --nat=extip:127.0.0.1 console  
+
+node3
+geth --networkid 719 --datadir C:\Users\jungw\OneDrive\Desktop\eth_private\node3\ --ipcdisable --http.port 8565 --ws.port 8566 --http.api admin,db,eth,debug,miner,net,shh,txpool,personal,web3 --ws.api admin,db,eth,debug,miner,net,shh,txpool,personal,web3 --mine --port 30324 --allow-insecure-unlock  --nat=extip:127.0.0.1 console  
+
+node4
+geth --networkid 719 --datadir C:\Users\jungw\OneDrive\Desktop\eth_private\node4\ --ipcdisable --http.port 8575 --ws.port 8576 --http.api admin,db,eth,debug,miner,net,shh,txpool,personal,web3 --ws.api admin,db,eth,debug,miner,net,shh,txpool,personal,web3 --mine --port 30334 --allow-insecure-unlock --nat=extip:127.0.0.1  console 
+
+==================================================================
+
+node1
+"enode://e709ac74b01224154cfa8f7eb741634cd2847c1c9af419f526cf63cd5b55051f9428d30d00b0e05a2b61e860faa8990051f71c7c0318b9d7b2b3c2bc8facb2d4@127.0.0.1:64379",
+
+node2
+"enode://e709ac74b01224154cfa8f7eb741634cd2847c1c9af419f526cf63cd5b55051f9428d30d00b0e05a2b61e860faa8990051f71c7c0318b9d7b2b3c2bc8facb2d4@127.0.0.1:30314",
+
+node3
+"enode://ee96607da20e8b491c2be2ed68914d64f2f2cb2b5907a195e87eb18f5cd11df6133153d11724b53f293f1c2b5f3a5d7ee0069320ac77985c8824d9f41e225969@127.0.0.1:30324",
+
+node4
+"enode://18d818a495d7cc375852cba917b0e0358336d8b82f1e8e3da2c480dd51a4d31b727a1789ff4f339a091461d88bfef1261919633f66f43f9139a2241a3be7a4d3@127.0.0.1:30334",
+=======================================================================
+
+노드 2,3,4 terminal (노드 1 enode 정보)
+admin.addPeer("enode://e709ac74b01224154cfa8f7eb741634cd2847c1c9af419f526cf63cd5b55051f9428d30d00b0e05a2b61e860faa8990051f71c7c0318b9d7b2b3c2bc8facb2d4@127.0.0.1:64379")
+
+노드 3,4 terminal (노드 2 enode 정보)
+admin.addPeer("enode://e709ac74b01224154cfa8f7eb741634cd2847c1c9af419f526cf63cd5b55051f9428d30d00b0e05a2b61e860faa8990051f71c7c0318b9d7b2b3c2bc8facb2d4@127.0.0.1:30314")
+
+노드 4 terminal (노드 3 enode 정보)
+admin.addPeer("enode://ee96607da20e8b491c2be2ed68914d64f2f2cb2b5907a195e87eb18f5cd11df6133153d11724b53f293f1c2b5f3a5d7ee0069320ac77985c8824d9f41e225969@127.0.0.1:30324")
+===================================================================================
+
+
+geth --networkid 719 --datadir /Users/a10403/Desktop/eth_private/node1/ --port 30304 --ipcdisable --syncmode full --http --http.addr 0.0.0.0 --http.api admin,eth,miner,net,txpool,personal,web3 --allow-insecure-unlock --http.corsdomain "*" --http.vhosts "*" --http.port 8545 --mine --nat=extip:127.0.0.1 console
