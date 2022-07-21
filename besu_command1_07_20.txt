@@ -1,0 +1,23 @@
+java -version
+
+./gradlew installDist
+
+Build 에러의 원인 => JDK
+해결책
+1. 기존 Java를 모두 삭제
+2. 채팅창에 드린 링크를 사용해서 JDK 다시 설치
+https://www.oracle.com/java/technologies/downloads/
+
+Build 종료후 반드시 Build Successful 메시지가 떠야합니다.
+
+3. besu 폴더를 삭제하고 다시 압축 해제 (gradlew 다시 진행)
+
+4. PoWshell 관리자권한으로 실행하면 된다
+
+java 환경변수 참조 
+https://minstar0410.tistory.com/3
+
+besu 환경변수 넣기
+C:\Users\jungw\OneDrive\Desktop\besu-release-22.1.2\besu-release-22.1.2\build\install\besu\bin
+
+

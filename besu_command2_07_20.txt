@@ -1,0 +1,48 @@
+node1 
+address: 0x2941F305FA0263758449Cd541e4aa1b5F54a309e
+private_key: 13762785b5410dd75b540a313ad3f7d25c3fe99d1aed6e21ac1a09655375175e
+
+node2
+address: 0x3Fc35814481F7708F2a4c1aCe331Be0F2Eae550a
+private_key: 81fddde495717b959f8a1a922a86bf66267896737fad71aea48d6f38826c6b70
+
+node3
+address: 0x9Eff2E4f87eaAC27b446F9FA6d22c8031C8076e1
+private_key: e84e1b26c9bd988b1fd4dbf8ffb7cfda031c350351a4c74f288a264bf1cbd204
+
+node4
+address: 0xe0bC3a5e976AC8CEd3a4B208954b08F4Cf2Cbc51
+private_key: d8c964cd27e37a7e1ecf34e874d9db56fa6d02a7e9fee30e86f0b646cad8ad5b
+
+==================
+윈도우에서 git bash 사용할 시에 경로는 /
+그외에 cmd나 powershell을 사용할시에 경로는 \ 로 표기
+
+besu operator generate-blockchain-config --config-file=ibftConfigFile.json --to=networkFiles --private-key-file-name=key
+
+./besu operator generate-blockchain-config --config-file=C:/Users/jungw/OneDrive/Desktop/besu_private_2/ibftConfigFile.json --to=C:/Users/jungw/OneDrive/Desktop/besu_private_2/networkFile --private-key-file-name=key
+
+==================
+besu --data-path=data --genesis-file=../genesis.json --rpc-http-enabled --rpc-http-api=ETH,NET,IBFT --host-allowlist="*" --rpc-http-cors-origins="all"
+
+./besu --data-path=C:/Users/jungw/OneDrive/Destop/besu_private_2/node1/data --genesis-file=C:/Users/jungw/OneDrive/Destop/besu_private_2/genesis.json --rpc-http-enabled --rpc-http-api=ETH,NET,IBFT --host-allowlist="*" --rpc-http-cors-origins="all"
+
+
+node1 enode
+Enode URL enode://ca9181512efb7f22a51e132a0e0992578f9f2640ee6c71db3ac9fe80402503b677d4cb95399ddc030da6cde47b65ecac115865ba30648a42e746fa5af6eab9f7@127.0.0.1:30303
+
+node1 execution command
+besu --data-path=data --genesis-file=../genesis.json --rpc-http-enabled --rpc-http-api=ETH,NET,IBFT --host-allowlist="*" --rpc-http-cors-origins="all"
+./besu --data-path=C:/Users/jungw/OneDrive/Destop/besu_private_2/node1/data --genesis-file=C:/Users/jungw/OneDrive/Destop/besu_private_2/genesis.json --rpc-http-enabled --rpc-http-api=ETH,NET,IBFT --host-allowlist="*" --rpc-http-cors-origins="all"
+
+
+node2  execution command
+besu --data-path=data --genesis-file=../genesis.json --bootnodes=enode://ca9181512efb7f22a51e132a0e0992578f9f2640ee6c71db3ac9fe80402503b677d4cb95399ddc030da6cde47b65ecac115865ba30648a42e746fa5af6eab9f7@127.0.0.1:30303 --p2p-port=30304 --rpc-ws-enabled --rpc-ws-api=ETH,NET,IBFT --host-allowlist="*" --rpc-http-cors-origins="all" --rpc-ws-port=8546
+./besu --data-path=C:/Users/jungw/OneDrive/Destop/besu_private_2/node2/data --genesis-file=C:/Users/jungw/OneDrive/Destop/besu_private_2/genesis.json --bootnodes=enode://ca9181512efb7f22a51e132a0e0992578f9f2640ee6c71db3ac9fe80402503b677d4cb95399ddc030da6cde47b65ecac115865ba30648a42e746fa5af6eab9f7@127.0.0.1:30303 --p2p-port=30304 --rpc-ws-enabled --rpc-ws-api=ETH,NET,IBFT --host-allowlist="*" --rpc-http-cors-origins="all" --rpc-ws-port=8546
+
+node3  execution command
+besu --data-path=data --genesis-file=../genesis.json --bootnodes=enode://ca9181512efb7f22a51e132a0e0992578f9f2640ee6c71db3ac9fe80402503b677d4cb95399ddc030da6cde47b65ecac115865ba30648a42e746fa5af6eab9f7@127.0.0.1:30303 --p2p-port=30305 --rpc-ws-enabled --rpc-ws-api=ETH,NET,IBFT --host-allowlist="*" --rpc-http-cors-origins="all" --rpc-ws-port=8547
+
+
+node4  execution command
+besu --data-path=data --genesis-file=../genesis.json --bootnodes=enode://ca9181512efb7f22a51e132a0e0992578f9f2640ee6c71db3ac9fe80402503b677d4cb95399ddc030da6cde47b65ecac115865ba30648a42e746fa5af6eab9f7@127.0.0.1:30303 --p2p-port=30306 --rpc-ws-enabled --rpc-ws-api=ETH,NET,IBFT --host-allowlist="*" --rpc-http-cors-origins="all" --rpc-ws-port=8548
